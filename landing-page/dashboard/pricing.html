@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopClaw AI — Subscribe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        :root {
+            --primary: #e74c3c;
+            --primary-dark: #c0392b;
+            --green: #27ae60;
+            --bg: #f0f2f5;
+            --card: #ffffff;
+            --text: #2c3e50;
+            --text-light: #6c757d;
+            --border: #e9ecef;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+
+        h1 { text-align: center; font-size: 36px; margin-bottom: 8px; }
+        .subtitle { text-align: center; color: var(--text-light); font-size: 18px; margin-bottom: 48px; }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .plan {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 36px 28px;
+            border: 2px solid var(--border);
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .plan:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+        .plan.featured {
+            border-color: var(--primary);
+            transform: scale(1.04);
+            box-shadow: 0 12px 40px rgba(231,76,60,0.15);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .plan h2 { font-size: 22px; margin-bottom: 16px; }
+
+        .plan-price {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .plan-price small { font-size: 16px; font-weight: 400; color: var(--text-light); }
+        .plan-period { font-size: 14px; color: var(--text-light); margin-bottom: 24px; }
+
+        .plan ul { list-style: none; text-align: left; margin-bottom: 28px; }
+        .plan li {
+            padding: 10px 0;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .plan li::before { content: "✓"; color: var(--green); font-weight: 700; font-size: 16px; }
+
+        .btn-subscribe {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: 2px solid var(--primary);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .btn-subscribe.primary { background: var(--primary); color: white; }
+        .btn-subscribe.primary:hover { background: var(--primary-dark); }
+        .btn-subscribe.outline { background: white; color: var(--primary); }
+        .btn-subscribe.outline:hover { background: var(--primary); color: white; }
+
+        /* Stripe Elements */
+        .checkout-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkout-modal.active { display: flex; }
+
+        .checkout-form {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 480px;
+            width: 100%;
+            position: relative;
+        }
+
+        .checkout-form h3 { margin-bottom: 8px; }
+        .checkout-form .plan-summary { color: var(--text-light); margin-bottom: 24px; font-size: 14px; }
+
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+        }
+        .form-group input:focus { border-color: var(--primary); }
+
+        #card-element {
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        #card-errors {
+            color: var(--primary);
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .success-message.active { display: block; }
+        .success-icon { font-size: 64px; margin-bottom: 16px; }
+        .success-message h3 { font-size: 24px; margin-bottom: 8px; }
+        .success-message p { color: var(--text-light); }
+
+        .guarantee {
+            text-align: center;
+            padding: 32px;
+            background: var(--card);
+            border-radius: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .guarantee h3 { margin-bottom: 8px; }
+        .guarantee p { color: var(--text-light); font-size: 14px; }
+
+        @media (max-width: 768px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+            .plan.featured { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Plan</h1>
+        <p class="subtitle">14-day free trial on all plans. No credit card required to start.</p>
+
+        <div class="pricing-grid">
+            <!-- Starter -->
+            <div class="plan">
+                <h2>Starter</h2>
+                <div class="plan-price">$29<small>/mo</small></div>
+                <div class="plan-period">or 690,000đ/month</div>
+                <ul>
+                    <li>1,000 messages/month</li>
+                    <li>2 chat channels</li>
+                    <li>100 products</li>
+                    <li>Email support</li>
+                    <li>Basic analytics</li>
+                </ul>
+                <button class="btn-subscribe outline" onclick="openCheckout('starter', 29, 'Starter Plan')">
+                    Start Free Trial
+                </button>
+            </div>
+
+            <!-- Growth -->
+            <div class="plan featured">
+                <div class="plan-badge">Most Popular</div>
+                <h2>Growth</h2>
+                <div class="plan-price">$79<small>/mo</small></div>
+                <div class="plan-period">or 1,890,000đ/month</div>
+                <ul>
+                    <li>5,000 messages/month</li>
+                    <li>4 chat channels</li>
+                    <li>500 products</li>
+                    <li>Priority support</li>
+                    <li>Full analytics dashboard</li>
+                    <li>Custom AI personality</li>
+                </ul>
+                <button class="btn-subscribe primary" onclick="openCheckout('growth', 79, 'Growth Plan')">
+                    Start Free Trial
+                </button>
+            </div>
+
+            <!-- Pro -->
+            <div class="plan">
+                <h2>Pro</h2>
+                <div class="plan-price">$199<small>/mo</small></div>
+                <div class="plan-period">or 4,790,000đ/month</div>
+                <ul>
+                    <li>Unlimited messages</li>
+                    <li>All chat channels</li>
+                    <li>Unlimited products</li>
+                    <li>24/7 VIP support</li>
+                    <li>Custom API access</li>
+                    <li>White-label branding</li>
+                    <li>Dedicated account manager</li>
+                </ul>
+                <button class="btn-subscribe outline" onclick="openCheckout('pro', 199, 'Pro Plan')">
+                    Start Free Trial
+                </button>
+            </div>
+        </div>
+
+        <div class="guarantee">
+            <h3>30-Day Money-Back Guarantee</h3>
+            <p>Try ShopClaw AI risk-free. If you're not satisfied within 30 days, we'll refund your payment in full. No questions asked.</p>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-form" id="checkoutForm">
+            <button class="close-modal" onclick="closeCheckout()">&times;</button>
+
+            <div id="formContent">
+                <h3>Subscribe to <span id="planName">Growth Plan</span></h3>
+                <p class="plan-summary"><span id="planPrice">$79</span>/month — 14-day free trial</p>
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="customerName" placeholder="Nguyen Van A" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="customerEmail" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone (optional)</label>
+                    <input type="tel" id="customerPhone" placeholder="+84 901 234 567">
+                </div>
+                <div class="form-group">
+                    <label>Card Details</label>
+                    <div id="card-element"></div>
+                    <div id="card-errors" role="alert"></div>
+                </div>
+
+                <button class="btn-subscribe primary" id="submitBtn" onclick="handleSubmit()" style="margin-top:24px">
+                    Start 14-Day Free Trial
+                </button>
+                <p style="text-align:center;font-size:12px;color:var(--text-light);margin-top:12px">
+                    You won't be charged during the trial period. Cancel anytime.
+                </p>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">🎉</div>
+                <h3>Welcome to ShopClaw AI!</h3>
+                <p>Your 14-day free trial has started. Check your email for setup instructions.</p>
+                <button class="btn-subscribe primary" style="margin-top:24px" onclick="window.location.href='index.html'">
+                    Go to Dashboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ==================== Stripe Integration ====================
+    // IMPORTANT: Replace with your actual Stripe publishable key
+    const STRIPE_PUBLISHABLE_KEY = 'pk_test_YOUR_STRIPE_PUBLISHABLE_KEY';
+
+    let stripe, elements, cardElement;
+    let selectedPlan = null;
+
+    function initStripe() {
+        // Only init if real key is set
+        if (STRIPE_PUBLISHABLE_KEY.startsWith('pk_test_YOUR')) {
+            console.log('Stripe demo mode — replace STRIPE_PUBLISHABLE_KEY with your actual key');
+            return;
+        }
+
+        stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+        elements = stripe.elements();
+        cardElement = elements.create('card', {
+            style: {
+                base: {
+                    fontSize: '16px',
+                    fontFamily: 'Inter, sans-serif',
+                    color: '#2c3e50',
+                    '::placeholder': { color: '#aab7c4' }
+                }
+            }
+        });
+    }
+
+    function openCheckout(plan, price, name) {
+        selectedPlan = { plan, price, name };
+        document.getElementById('planName').textContent = name;
+        document.getElementById('planPrice').textContent = '$' + price;
+        document.getElementById('checkoutModal').classList.add('active');
+        document.getElementById('formContent').style.display = 'block';
+        document.getElementById('successMessage').classList.remove('active');
+
+        if (cardElement) {
+            cardElement.mount('#card-element');
+        }
+    }
+
+    function closeCheckout() {
+        document.getElementById('checkoutModal').classList.remove('active');
+        if (cardElement) {
+            cardElement.unmount();
+        }
+    }
+
+    async function handleSubmit() {
+        const name = document.getElementById('customerName').value;
+        const email = document.getElementById('customerEmail').value;
+        const phone = document.getElementById('customerPhone').value;
+        const btn = document.getElementById('submitBtn');
+
+        if (!name || !email) {
+            alert('Please fill in your name and email.');
+            return;
+        }
+
+        btn.textContent = 'Processing...';
+        btn.disabled = true;
+
+        // =====================================================
+        // PRODUCTION: Send to your backend to create Stripe
+        // subscription with trial period
+        //
+        // Example backend flow:
+        // 1. Create Stripe Customer
+        // 2. Create Subscription with trial_period_days: 14
+        // 3. Return client_secret for payment confirmation
+        //
+        // const response = await fetch('/api/subscribe', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({
+        //         name, email, phone,
+        //         plan: selectedPlan.plan,
+        //         price: selectedPlan.price
+        //     })
+        // });
+        // const { clientSecret } = await response.json();
+        //
+        // const { error } = await stripe.confirmCardPayment(clientSecret, {
+        //     payment_method: {
+        //         card: cardElement,
+        //         billing_details: { name, email }
+        //     }
+        // });
+        // =====================================================
+
+        // DEMO MODE: Simulate successful subscription
+        setTimeout(() => {
+            document.getElementById('formContent').style.display = 'none';
+            document.getElementById('successMessage').classList.add('active');
+            console.log('Demo subscription:', { name, email, phone, plan: selectedPlan });
+        }, 1500);
+    }
+
+    // Close modal on backdrop click
+    document.getElementById('checkoutModal').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) closeCheckout();
+    });
+
+    // Init
+    initStripe();
+    </script>
+</body>
+</html>
