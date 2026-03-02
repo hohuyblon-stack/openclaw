@@ -1,0 +1,103 @@
+{
+  "_comment": "Sample orders — In production, connect to your e-commerce platform API",
+  "orders": [
+    {
+      "order_id": "ORD-20260228-001",
+      "customer_name": "Nguyen Van A",
+      "customer_phone": "+84901234567",
+      "customer_email": "nguyenvana@email.com",
+      "items": [
+        { "product_id": "SKU-001", "name": "Áo Thun Cotton Cao Cấp", "variant": "White - M", "qty": 2, "unit_price": 249000 },
+        { "product_id": "SKU-005", "name": "Bộ Phin Cà Phê Việt Nam", "variant": "Robusta Classic", "qty": 1, "unit_price": 389000 }
+      ],
+      "subtotal": 887000,
+      "shipping_fee": 0,
+      "discount": 177400,
+      "discount_code": "SPRING20",
+      "total": 709600,
+      "currency": "VND",
+      "payment_method": "MoMo",
+      "payment_status": "paid",
+      "status": "in_transit",
+      "shipping": {
+        "carrier": "GHN",
+        "tracking_number": "GHN987654321",
+        "estimated_delivery": "2026-03-03",
+        "tracking_url": "https://tracking.ghn.vn/GHN987654321",
+        "address": "123 Nguyen Hue, Q1, TP.HCM"
+      },
+      "timeline": [
+        { "status": "pending", "time": "2026-02-28T08:00:00+07:00" },
+        { "status": "confirmed", "time": "2026-02-28T08:15:00+07:00" },
+        { "status": "processing", "time": "2026-02-28T10:00:00+07:00" },
+        { "status": "shipped", "time": "2026-02-28T16:00:00+07:00" },
+        { "status": "in_transit", "time": "2026-03-01T09:00:00+07:00" }
+      ],
+      "created_at": "2026-02-28T08:00:00+07:00"
+    },
+    {
+      "order_id": "ORD-20260301-002",
+      "customer_name": "Jane Smith",
+      "customer_phone": "+1234567890",
+      "customer_email": "jane@email.com",
+      "items": [
+        { "product_id": "SKU-002", "name": "Wireless Bluetooth Headphones", "variant": "Black", "qty": 1, "unit_price": 49.99 },
+        { "product_id": "SKU-004", "name": "Smart Fitness Watch Pro", "variant": "Black Sport Band", "qty": 1, "unit_price": 79.99 }
+      ],
+      "subtotal": 129.98,
+      "shipping_fee": 0,
+      "discount": 25.99,
+      "discount_code": "SPRING20",
+      "total": 103.99,
+      "currency": "USD",
+      "payment_method": "PayPal",
+      "payment_status": "paid",
+      "status": "confirmed",
+      "shipping": {
+        "carrier": "DHL",
+        "tracking_number": null,
+        "estimated_delivery": "2026-03-10",
+        "address": "456 Oak Street, New York, NY 10001, USA"
+      },
+      "timeline": [
+        { "status": "pending", "time": "2026-03-01T10:30:00Z" },
+        { "status": "confirmed", "time": "2026-03-01T10:45:00Z" }
+      ],
+      "created_at": "2026-03-01T10:30:00Z"
+    },
+    {
+      "order_id": "ORD-20260225-003",
+      "customer_name": "Tran Thi B",
+      "customer_phone": "+84987654321",
+      "customer_email": "tranthib@email.com",
+      "items": [
+        { "product_id": "SKU-003", "name": "Bộ Sưu Tập Trà Xanh Organic", "variant": "Premium Gift Box", "qty": 3, "unit_price": 839000 }
+      ],
+      "subtotal": 2517000,
+      "shipping_fee": 0,
+      "discount": 503400,
+      "discount_code": "SPRING20",
+      "total": 2013600,
+      "currency": "VND",
+      "payment_method": "Bank Transfer",
+      "payment_status": "paid",
+      "status": "delivered",
+      "shipping": {
+        "carrier": "GHTK",
+        "tracking_number": "GHTK112233445",
+        "estimated_delivery": "2026-02-28",
+        "tracking_url": "https://tracking.ghtk.vn/GHTK112233445",
+        "address": "789 Le Loi, Q3, TP.HCM"
+      },
+      "timeline": [
+        { "status": "pending", "time": "2026-02-25T14:00:00+07:00" },
+        { "status": "confirmed", "time": "2026-02-25T14:10:00+07:00" },
+        { "status": "processing", "time": "2026-02-25T16:00:00+07:00" },
+        { "status": "shipped", "time": "2026-02-26T09:00:00+07:00" },
+        { "status": "in_transit", "time": "2026-02-26T15:00:00+07:00" },
+        { "status": "delivered", "time": "2026-02-28T10:30:00+07:00" }
+      ],
+      "created_at": "2026-02-25T14:00:00+07:00"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "_comment": "Sample product catalog — Replace with your actual products",
+  "store_name": "ShopClaw Demo Store",
+  "store_name_vi": "ShopClaw Demo",
+  "currency_default": "VND",
+  "products": [
+    {
+      "id": "SKU-001",
+      "name": "Premium Cotton T-Shirt",
+      "name_vi": "Áo Thun Cotton Cao Cấp",
+      "category": "Áo thun / T-shirts",
+      "price": 9.99,
+      "currency": "USD",
+      "price_vnd": 249000,
+      "description": "Ultra-soft 100% organic cotton t-shirt. Pre-shrunk, breathable, perfect for everyday wear.",
+      "description_vi": "Áo thun 100% cotton organic siêu mềm. Đã xử lý co rút, thoáng khí, hoàn hảo cho mọi ngày.",
+      "specs": {
+        "material": "100% Organic Cotton",
+        "weight": "180gsm",
+        "fit": "Regular fit",
+        "care": "Machine wash cold, tumble dry low"
+      },
+      "stock": 150,
+      "variants": [
+        { "name": "White - S", "sku": "SKU-001-WS", "stock": 30, "price_modifier": 0 },
+        { "name": "White - M", "sku": "SKU-001-WM", "stock": 45, "price_modifier": 0 },
+        { "name": "White - L", "sku": "SKU-001-WL", "stock": 25, "price_modifier": 0 },
+        { "name": "Black - S", "sku": "SKU-001-BS", "stock": 20, "price_modifier": 0 },
+        { "name": "Black - M", "sku": "SKU-001-BM", "stock": 30, "price_modifier": 0 }
+      ],
+      "tags": ["cotton", "basic", "everyday", "bestseller"],
+      "rating": 4.8,
+      "reviews_count": 1234,
+      "is_bestseller": true
+    },
+    {
+      "id": "SKU-002",
+      "name": "Wireless Bluetooth Headphones",
+      "name_vi": "Tai Nghe Bluetooth Không Dây",
+      "category": "Tai nghe / Headphones",
+      "price": 49.99,
+      "currency": "USD",
+      "price_vnd": 1199000,
+      "description": "Active noise cancelling, 40h battery life, premium sound quality with deep bass.",
+      "description_vi": "Chống ồn chủ động, pin 40 giờ, chất âm cao cấp với bass sâu.",
+      "specs": {
+        "type": "Over-ear",
+        "connectivity": "Bluetooth 5.3",
+        "battery": "40 hours (ANC on: 30 hours)",
+        "driver": "40mm dynamic",
+        "weight": "250g",
+        "charging": "USB-C, 10min charge = 3h playback",
+        "features": "ANC, Transparency mode, Multipoint"
+      },
+      "stock": 85,
+      "variants": [
+        { "name": "Black", "sku": "SKU-002-BK", "stock": 40, "price_modifier": 0 },
+        { "name": "White", "sku": "SKU-002-WH", "stock": 25, "price_modifier": 0 },
+        { "name": "Navy Blue", "sku": "SKU-002-NV", "stock": 20, "price_modifier": 2.00 }
+      ],
+      "tags": ["audio", "bluetooth", "noise-cancelling", "bestseller"],
+      "rating": 4.7,
+      "reviews_count": 567,
+      "is_bestseller": true
+    },
+    {
+      "id": "SKU-003",
+      "name": "Organic Green Tea Collection",
+      "name_vi": "Bộ Sưu Tập Trà Xanh Organic",
+      "category": "Đồ uống / Beverages",
+      "price": 24.99,
+      "currency": "USD",
+      "price_vnd": 599000,
+      "description": "Premium organic green tea gift set. 6 varieties from Japan and Vietnam. 60 tea bags total.",
+      "description_vi": "Set trà xanh organic cao cấp. 6 loại từ Nhật Bản và Việt Nam. Tổng 60 túi trà.",
+      "specs": {
+        "contents": "6 varieties x 10 bags",
+        "varieties": "Matcha, Sencha, Jasmine, Oolong, Thai Nguyen, Lotus",
+        "weight": "180g total",
+        "origin": "Japan & Vietnam",
+        "certification": "USDA Organic, JAS Organic",
+        "shelf_life": "24 months from production"
+      },
+      "stock": 200,
+      "variants": [
+        { "name": "Standard Box", "sku": "SKU-003-STD", "stock": 150, "price_modifier": 0 },
+        { "name": "Premium Gift Box", "sku": "SKU-003-GFT", "stock": 50, "price_modifier": 10.00 }
+      ],
+      "tags": ["tea", "organic", "gift", "healthy", "new-arrival"],
+      "rating": 4.9,
+      "reviews_count": 89,
+      "is_new": true
+    },
+    {
+      "id": "SKU-004",
+      "name": "Smart Fitness Watch Pro",
+      "name_vi": "Đồng Hồ Thông Minh Fitness Pro",
+      "category": "Đồng hồ thông minh / Smartwatches",
+      "price": 79.99,
+      "currency": "USD",
+      "price_vnd": 1899000,
+      "description": "Track your health 24/7. Heart rate, SpO2, sleep, 100+ sport modes. 14-day battery life.",
+      "description_vi": "Theo dõi sức khỏe 24/7. Nhịp tim, SpO2, giấc ngủ, 100+ chế độ thể thao. Pin 14 ngày.",
+      "specs": {
+        "display": "1.43\" AMOLED, 466x466",
+        "battery": "14 days typical use",
+        "water_resistance": "5ATM + IP68",
+        "sensors": "Heart rate, SpO2, Accelerometer, Gyroscope",
+        "connectivity": "Bluetooth 5.2, GPS",
+        "compatibility": "iOS 12+ / Android 8+",
+        "sport_modes": "100+"
+      },
+      "stock": 60,
+      "variants": [
+        { "name": "Black Sport Band", "sku": "SKU-004-BSB", "stock": 30, "price_modifier": 0 },
+        { "name": "Green Sport Band", "sku": "SKU-004-GSB", "stock": 15, "price_modifier": 0 },
+        { "name": "Leather Strap (Brown)", "sku": "SKU-004-LBR", "stock": 15, "price_modifier": 15.00 }
+      ],
+      "tags": ["smartwatch", "fitness", "health", "GPS"],
+      "rating": 4.6,
+      "reviews_count": 345
+    },
+    {
+      "id": "SKU-005",
+      "name": "Vietnamese Coffee Drip Set",
+      "name_vi": "Bộ Phin Cà Phê Việt Nam",
+      "category": "Đồ uống / Beverages",
+      "price": 15.99,
+      "currency": "USD",
+      "price_vnd": 389000,
+      "description": "Authentic Vietnamese phin filter + 250g premium robusta beans from Buon Ma Thuot.",
+      "description_vi": "Phin cà phê truyền thống + 250g hạt robusta nguyên chất từ Buôn Ma Thuột.",
+      "specs": {
+        "includes": "1x Stainless steel phin filter, 250g coffee beans",
+        "coffee_origin": "Buon Ma Thuot, Dak Lak, Vietnam",
+        "roast": "Medium-dark",
+        "grind": "Coarse (phin-optimized)",
+        "phin_material": "Stainless steel 304",
+        "shelf_life": "12 months from roast date"
+      },
+      "stock": 300,
+      "variants": [
+        { "name": "Robusta Classic", "sku": "SKU-005-RC", "stock": 200, "price_modifier": 0 },
+        { "name": "Arabica Premium", "sku": "SKU-005-AP", "stock": 100, "price_modifier": 5.00 }
+      ],
+      "tags": ["coffee", "vietnamese", "gift", "culture"],
+      "rating": 4.9,
+      "reviews_count": 678,
+      "is_bestseller": true
+    }
+  ]
+}

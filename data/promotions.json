@@ -1,0 +1,104 @@
+{
+  "_comment": "Active promotions and loyalty program — Update regularly",
+  "promotions": [
+    {
+      "id": "PROMO-001",
+      "name": "Spring Sale 2026",
+      "name_vi": "Khuyến Mãi Xuân 2026",
+      "type": "percentage",
+      "discount": 20,
+      "code": "SPRING20",
+      "min_order": 300000,
+      "min_order_usd": 12,
+      "max_discount": 500000,
+      "max_discount_usd": 20,
+      "start_date": "2026-03-01",
+      "end_date": "2026-03-31",
+      "applicable_categories": ["all"],
+      "description": "20% off everything! Min order 300,000đ / $12. Max discount 500,000đ / $20",
+      "description_vi": "Giảm 20% toàn bộ sản phẩm! Đơn tối thiểu 300,000đ. Giảm tối đa 500,000đ",
+      "active": true,
+      "usage_limit": 1000,
+      "usage_count": 156
+    },
+    {
+      "id": "PROMO-002",
+      "name": "Free Shipping Weekend",
+      "name_vi": "Miễn Phí Ship Cuối Tuần",
+      "type": "free_shipping",
+      "discount": 0,
+      "code": "FREESHIP",
+      "min_order": 200000,
+      "min_order_usd": 8,
+      "start_date": "2026-03-07",
+      "end_date": "2026-03-09",
+      "applicable_categories": ["all"],
+      "description": "Free shipping on all orders over 200,000đ / $8 this weekend!",
+      "description_vi": "Miễn phí vận chuyển cho đơn hàng trên 200,000đ cuối tuần này!",
+      "active": true,
+      "usage_limit": 500,
+      "usage_count": 0
+    },
+    {
+      "id": "PROMO-003",
+      "name": "New Customer Welcome",
+      "name_vi": "Chào Khách Hàng Mới",
+      "type": "fixed_amount",
+      "discount_vnd": 50000,
+      "discount_usd": 2,
+      "code": "WELCOME",
+      "min_order": 150000,
+      "min_order_usd": 6,
+      "start_date": "2026-01-01",
+      "end_date": "2026-12-31",
+      "applicable_categories": ["all"],
+      "description": "New customers get $2 / 50,000đ off their first order!",
+      "description_vi": "Khách hàng mới giảm 50,000đ cho đơn đầu tiên!",
+      "active": true,
+      "first_order_only": true,
+      "usage_limit": null,
+      "usage_count": 2340
+    }
+  ],
+  "loyalty_program": {
+    "enabled": true,
+    "name": "ShopClaw Rewards",
+    "points_per_dollar": 10,
+    "points_per_vnd_10k": 1,
+    "redemption_rate_text": "100 points = $1 discount / 25,000đ",
+    "tiers": [
+      {
+        "name": "Bronze",
+        "name_vi": "Đồng",
+        "min_points": 0,
+        "multiplier": 1.0,
+        "benefits": ["Earn 1 point per $1 spent", "Birthday discount 10%"],
+        "benefits_vi": ["Tích 1 điểm cho mỗi 10,000đ", "Giảm 10% ngày sinh nhật"]
+      },
+      {
+        "name": "Silver",
+        "name_vi": "Bạc",
+        "min_points": 500,
+        "multiplier": 1.5,
+        "benefits": ["Earn 1.5x points", "Free shipping on all orders", "Birthday discount 15%"],
+        "benefits_vi": ["Tích điểm x1.5", "Miễn phí ship mọi đơn", "Giảm 15% ngày sinh nhật"]
+      },
+      {
+        "name": "Gold",
+        "name_vi": "Vàng",
+        "min_points": 2000,
+        "multiplier": 2.0,
+        "benefits": ["Earn 2x points", "Free shipping", "Early access to sales", "Birthday discount 20%"],
+        "benefits_vi": ["Tích điểm x2", "Miễn phí ship", "Mua sớm hàng sale", "Giảm 20% ngày sinh nhật"]
+      },
+      {
+        "name": "Platinum",
+        "name_vi": "Kim Cương",
+        "min_points": 5000,
+        "multiplier": 3.0,
+        "benefits": ["Earn 3x points", "Free express shipping", "Early access", "VIP support", "Birthday discount 30%"],
+        "benefits_vi": ["Tích điểm x3", "Miễn phí ship nhanh", "Mua sớm hàng sale", "Hỗ trợ VIP", "Giảm 30% ngày sinh nhật"]
+      }
+    ]
+  }
+}

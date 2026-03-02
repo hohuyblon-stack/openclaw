@@ -1,0 +1,69 @@
+{
+  "$schema": "https://openclaw.ai/schema/config.json",
+  "_comment": "ShopClaw AI — Base Configuration for OpenClaw",
+
+  "models": {
+    "default": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "_comment": "Use claude-opus-4-6 for best quality, claude-sonnet-4-6 for cost-effective"
+    },
+    "fallback": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    }
+  },
+
+  "agents": {
+    "workspace": "~/.openclaw/workspace",
+    "defaults": {
+      "thinking": "medium",
+      "verbose": false,
+      "usage": "tokens"
+    }
+  },
+
+  "gateway": {
+    "port": 18789,
+    "bind": "127.0.0.1"
+  },
+
+  "channels": {
+    "_comment": "Channel configs are loaded from channels/ directory. Add your tokens there."
+  },
+
+  "skills": {
+    "directory": "./skills",
+    "enabled": [
+      "product-catalog",
+      "customer-support",
+      "order-tracking",
+      "faq-policy",
+      "promotions"
+    ]
+  },
+
+  "data": {
+    "products": "./data/products.json",
+    "orders": "./data/orders.json",
+    "promotions": "./data/promotions.json",
+    "customers": "./data/customers.json"
+  },
+
+  "settings": {
+    "default_language": "vi",
+    "supported_languages": ["vi", "en", "zh", "ja", "ko", "th"],
+    "business_hours": {
+      "timezone": "Asia/Ho_Chi_Minh",
+      "start": "08:00",
+      "end": "22:00"
+    },
+    "escalation": {
+      "enabled": true,
+      "notify_channel": "telegram",
+      "response_time_minutes": 15
+    },
+    "max_message_length": 4000,
+    "typing_indicator": true
+  }
+}

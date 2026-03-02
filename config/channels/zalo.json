@@ -1,0 +1,31 @@
+{
+  "_comment": "Zalo Official Account (OA) configuration",
+  "_docs": "https://developers.zalo.me/docs",
+
+  "channel": "zalo",
+  "enabled": true,
+
+  "credentials": {
+    "app_id": "YOUR_ZALO_APP_ID",
+    "secret_key": "YOUR_ZALO_SECRET_KEY",
+    "oa_access_token": "YOUR_ZALO_OA_ACCESS_TOKEN",
+    "refresh_token": "YOUR_ZALO_REFRESH_TOKEN"
+  },
+
+  "settings": {
+    "auto_reply": true,
+    "welcome_message": "Xin chào! Em là trợ lý AI của shop. Em có thể giúp anh/chị tìm sản phẩm, kiểm tra đơn hàng, hoặc giải đáp thắc mắc ạ! 😊",
+    "away_message": "Dạ, hiện tại shop đang ngoài giờ làm việc. Em vẫn có thể hỗ trợ anh/chị các câu hỏi cơ bản. Với vấn đề phức tạp, nhân viên sẽ phản hồi vào ngày làm việc tiếp theo ạ!",
+    "language": "vi",
+    "chunk_long_messages": true,
+    "max_chunk_size": 2000
+  },
+
+  "setup_guide": [
+    "1. Đăng ký Zalo Official Account tại https://oa.zalo.me",
+    "2. Tạo ứng dụng tại https://developers.zalo.me/createapp",
+    "3. Cấu hình Webhook URL trỏ về server OpenClaw của bạn",
+    "4. Lấy App ID, Secret Key, OA Access Token",
+    "5. Điền thông tin vào file này và chạy lại setup"
+  ]
+}

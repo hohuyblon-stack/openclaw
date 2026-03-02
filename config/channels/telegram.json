@@ -1,0 +1,30 @@
+{
+  "_comment": "Telegram Bot configuration",
+  "_docs": "https://core.telegram.org/bots/api",
+
+  "channel": "telegram",
+  "enabled": true,
+
+  "credentials": {
+    "bot_token": "YOUR_TELEGRAM_BOT_TOKEN"
+  },
+
+  "settings": {
+    "auto_reply": true,
+    "welcome_message_vi": "Xin chào! Em là trợ lý AI của shop. Anh/chị cần hỗ trợ gì ạ? 😊",
+    "welcome_message_en": "Hi there! I'm the shop's AI assistant. How can I help you today? 😊",
+    "language": "auto",
+    "activation": "always",
+    "chunk_long_messages": true,
+    "max_chunk_size": 4000,
+    "parse_mode": "Markdown"
+  },
+
+  "setup_guide": [
+    "1. Open Telegram and search for @BotFather",
+    "2. Send /newbot and follow the instructions",
+    "3. Copy the bot token provided by BotFather",
+    "4. Paste the token in this config file",
+    "5. Optional: Set bot description and profile photo via BotFather"
+  ]
+}

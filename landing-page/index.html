@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopClaw AI — AI Customer Service for E-commerce | Trợ Lý AI cho Shop Online</title>
+    <meta name="description" content="Turn your messaging channels into a 24/7 AI customer service agent. Zalo, Telegram, WhatsApp, Messenger. Powered by OpenClaw.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle" id="langToggle">
+        <button class="lang-btn active" data-lang="vi">VI</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🦞</span>
+                <span class="logo-text">ShopClaw AI</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features" data-vi="Tính năng" data-en="Features">Tính năng</a>
+                <a href="#how-it-works" data-vi="Cách hoạt động" data-en="How it works">Cách hoạt động</a>
+                <a href="#pricing" data-vi="Bảng giá" data-en="Pricing">Bảng giá</a>
+                <a href="#demo" data-vi="Demo" data-en="Demo">Demo</a>
+                <a href="#cta" class="btn btn-primary btn-nav" data-vi="Dùng thử miễn phí" data-en="Start Free Trial">Dùng thử miễn phí</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge" data-vi="Powered by OpenClaw 🦞" data-en="Powered by OpenClaw 🦞">Powered by OpenClaw 🦞</div>
+                <h1>
+                    <span data-vi="AI Chăm Sóc Khách Hàng" data-en="AI Customer Service">AI Chăm Sóc Khách Hàng</span><br>
+                    <span class="gradient-text" data-vi="24/7 Cho Shop Online" data-en="24/7 For Your Online Store">24/7 Cho Shop Online</span>
+                </h1>
+                <p class="hero-subtitle" data-vi="Khách hàng nhắn tin trên Zalo, Telegram, WhatsApp, Messenger — ShopClaw AI trả lời tức thì về sản phẩm, giá cả, đơn hàng, khuyến mãi. Không cần thuê thêm nhân viên." data-en="Customers message you on Zalo, Telegram, WhatsApp, Messenger — ShopClaw AI responds instantly about products, pricing, orders, and promotions. No extra staff needed.">
+                    Khách hàng nhắn tin trên Zalo, Telegram, WhatsApp, Messenger — ShopClaw AI trả lời tức thì về sản phẩm, giá cả, đơn hàng, khuyến mãi. Không cần thuê thêm nhân viên.
+                </p>
+                <div class="hero-cta">
+                    <a href="#cta" class="btn btn-primary btn-lg" data-vi="Dùng thử 14 ngày miễn phí" data-en="Start 14-Day Free Trial">Dùng thử 14 ngày miễn phí</a>
+                    <a href="#demo" class="btn btn-secondary btn-lg" data-vi="Xem Demo" data-en="Watch Demo">Xem Demo</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">3s</span>
+                        <span class="stat-label" data-vi="Thời gian phản hồi" data-en="Response time">Thời gian phản hồi</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label" data-vi="Hoạt động liên tục" data-en="Always available">Hoạt động liên tục</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label" data-vi="Ngôn ngữ hỗ trợ" data-en="Languages supported">Ngôn ngữ hỗ trợ</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="chat-mockup">
+                    <div class="chat-header">
+                        <div class="chat-avatar">🦞</div>
+                        <div class="chat-name">ShopClaw AI</div>
+                        <div class="chat-status" data-vi="Đang hoạt động" data-en="Online">Đang hoạt động</div>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message customer">
+                            <span data-vi="Có áo thun trắng size L không?" data-en="Do you have white t-shirts in size L?">Có áo thun trắng size L không?</span>
+                        </div>
+                        <div class="message bot">
+                            <span data-vi="Dạ có ạ! Áo Thun Cotton Cao Cấp size L còn 25 cái ạ 🎽<br><br>• Giá: 249,000đ (đang giảm 20%)<br>• Chất liệu: 100% cotton organic<br>• Ship COD toàn quốc 2-3 ngày<br><br>Anh/chị đặt hàng luôn không ạ?" data-en="Yes, we do! Premium Cotton T-Shirt in size L — 25 in stock 🎽<br><br>• Price: $9.99 (20% off now!)<br>• Material: 100% organic cotton<br>• Ships within 2-3 days<br><br>Would you like to order?">Dạ có ạ! Áo Thun Cotton Cao Cấp size L còn 25 cái ạ 🎽<br><br>• Giá: 249,000đ (đang giảm 20%)<br>• Chất liệu: 100% cotton organic<br>• Ship COD toàn quốc 2-3 ngày<br><br>Anh/chị đặt hàng luôn không ạ?</span>
+                        </div>
+                        <div class="message customer">
+                            <span data-vi="Đặt 2 cái, giao về Q1 HCM nhé" data-en="I'll take 2, ship to NYC please">Đặt 2 cái, giao về Q1 HCM nhé</span>
+                        </div>
+                        <div class="typing-indicator">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channel Logos -->
+    <section class="channels">
+        <div class="container">
+            <p class="channels-title" data-vi="Hoạt động trên mọi kênh chat của bạn" data-en="Works on all your messaging channels">Hoạt động trên mọi kênh chat của bạn</p>
+            <div class="channel-logos">
+                <div class="channel-item">Zalo</div>
+                <div class="channel-item">Telegram</div>
+                <div class="channel-item">WhatsApp</div>
+                <div class="channel-item">Messenger</div>
+                <div class="channel-item">Discord</div>
+                <div class="channel-item">iMessage</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 data-vi="Mọi thứ shop cần, trong một AI" data-en="Everything your shop needs, in one AI">Mọi thứ shop cần, trong một AI</h2>
+            <p class="section-subtitle" data-vi="ShopClaw AI hiểu sản phẩm, chính sách, và khách hàng của bạn" data-en="ShopClaw AI knows your products, policies, and customers">ShopClaw AI hiểu sản phẩm, chính sách, và khách hàng của bạn</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3 data-vi="Tư Vấn Sản Phẩm" data-en="Product Advisor">Tư Vấn Sản Phẩm</h3>
+                    <p data-vi="AI biết toàn bộ catalog: giá, size, màu, tồn kho. Tư vấn và gợi ý sản phẩm phù hợp với khách hàng." data-en="AI knows your entire catalog: prices, sizes, colors, stock. Recommends products tailored to each customer.">AI biết toàn bộ catalog: giá, size, màu, tồn kho. Tư vấn và gợi ý sản phẩm phù hợp với khách hàng.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3 data-vi="Theo Dõi Đơn Hàng" data-en="Order Tracking">Theo Dõi Đơn Hàng</h3>
+                    <p data-vi="Khách hàng kiểm tra đơn hàng ngay trong chat. Trạng thái, mã vận đơn, dự kiến giao — tất cả tự động." data-en="Customers check orders right in chat. Status, tracking number, ETA — all automated.">Khách hàng kiểm tra đơn hàng ngay trong chat. Trạng thái, mã vận đơn, dự kiến giao — tất cả tự động.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3 data-vi="Khuyến Mãi & Mã Giảm Giá" data-en="Promotions & Coupons">Khuyến Mãi & Mã Giảm Giá</h3>
+                    <p data-vi="Tự động thông báo khuyến mãi, kiểm tra mã giảm giá, gợi ý deal phù hợp cho từng khách." data-en="Auto-share promotions, validate coupon codes, suggest relevant deals for each customer.">Tự động thông báo khuyến mãi, kiểm tra mã giảm giá, gợi ý deal phù hợp cho từng khách.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3 data-vi="FAQ & Chính Sách" data-en="FAQ & Policies">FAQ & Chính Sách</h3>
+                    <p data-vi="Trả lời tức thì về đổi trả, bảo hành, thanh toán, vận chuyển. Không cần khách chờ đợi." data-en="Instant answers about returns, warranty, payments, shipping. No more waiting for customers.">Trả lời tức thì về đổi trả, bảo hành, thanh toán, vận chuyển. Không cần khách chờ đợi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 data-vi="Đa Ngôn Ngữ" data-en="Multi-Language">Đa Ngôn Ngữ</h3>
+                    <p data-vi="Tự động phát hiện và trả lời bằng ngôn ngữ của khách hàng. Hỗ trợ 50+ ngôn ngữ." data-en="Auto-detect and respond in the customer's language. Supports 50+ languages.">Tự động phát hiện và trả lời bằng ngôn ngữ của khách hàng. Hỗ trợ 50+ ngôn ngữ.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3 data-vi="Chuyển Giao Thông Minh" data-en="Smart Handoff">Chuyển Giao Thông Minh</h3>
+                    <p data-vi="Khi cần thiết, AI chuyển khách cho nhân viên cùng toàn bộ context. Không phải hỏi lại từ đầu." data-en="When needed, AI hands off to human staff with full context. No need to start over.">Khi cần thiết, AI chuyển khách cho nhân viên cùng toàn bộ context. Không phải hỏi lại từ đầu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 data-vi="Setup trong 10 phút" data-en="Set up in 10 minutes">Setup trong 10 phút</h2>
+            <p class="section-subtitle" data-vi="Không cần biết code. Không cần kỹ thuật phức tạp." data-en="No coding required. No complex tech needed.">Không cần biết code. Không cần kỹ thuật phức tạp.</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 data-vi="Đăng ký & Kết nối" data-en="Sign Up & Connect">Đăng ký & Kết nối</h3>
+                    <p data-vi="Tạo tài khoản và kết nối kênh chat của bạn (Zalo, Telegram, WhatsApp...)" data-en="Create an account and connect your messaging channels (Zalo, Telegram, WhatsApp...)">Tạo tài khoản và kết nối kênh chat của bạn (Zalo, Telegram, WhatsApp...)</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 data-vi="Import Sản Phẩm" data-en="Import Products">Import Sản Phẩm</h3>
+                    <p data-vi="Upload catalog sản phẩm bằng file Excel/CSV hoặc kết nối Shopee, Lazada, TikTok Shop" data-en="Upload your product catalog via Excel/CSV or connect to Shopee, Lazada, TikTok Shop">Upload catalog sản phẩm bằng file Excel/CSV hoặc kết nối Shopee, Lazada, TikTok Shop</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 data-vi="Tùy Chỉnh" data-en="Customize">Tùy Chỉnh</h3>
+                    <p data-vi="Điều chỉnh giọng nói, chính sách đổi trả, thông tin ship, và phong cách trả lời" data-en="Adjust the AI's voice, return policy, shipping info, and response style">Điều chỉnh giọng nói, chính sách đổi trả, thông tin ship, và phong cách trả lời</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3 data-vi="Bật Lên & Bán Hàng" data-en="Go Live & Sell">Bật Lên & Bán Hàng</h3>
+                    <p data-vi="AI bắt đầu trả lời khách hàng. Bạn theo dõi dashboard và tập trung phát triển shop." data-en="AI starts serving customers. You monitor the dashboard and focus on growing your shop.">AI bắt đầu trả lời khách hàng. Bạn theo dõi dashboard và tập trung phát triển shop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 data-vi="Shop chủ nói gì?" data-en="What shop owners say">Shop chủ nói gì?</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p data-vi="Trước đây mình phải thuê 2 nhân viên CSKH, giờ ShopClaw AI xử lý 80% tin nhắn. Tiết kiệm gần 20 triệu/tháng!" data-en="I used to hire 2 customer service staff. Now ShopClaw AI handles 80% of messages. Saving almost $800/month!">"Trước đây mình phải thuê 2 nhân viên CSKH, giờ ShopClaw AI xử lý 80% tin nhắn. Tiết kiệm gần 20 triệu/tháng!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Minh Anh</strong>
+                        <span data-vi="Shop thời trang — Shopee" data-en="Fashion shop — Shopee">Shop thời trang — Shopee</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p data-vi="Khách nước ngoài nhắn tiếng Anh, tiếng Trung — AI trả lời ngon lành. Doanh thu quốc tế tăng 40% sau 2 tháng." data-en="Foreign customers message in English, Chinese — AI handles it perfectly. International revenue up 40% in 2 months.">"Khách nước ngoài nhắn tiếng Anh, tiếng Trung — AI trả lời ngon lành. Doanh thu quốc tế tăng 40% sau 2 tháng."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Thanh Tung</strong>
+                        <span data-vi="Shop đặc sản Việt — Etsy + Shopee" data-en="Vietnamese specialty shop — Etsy + Shopee">Shop đặc sản Việt — Etsy + Shopee</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p data-vi="3 giờ sáng vẫn có AI trả lời khách. Đơn hàng đêm khuya tăng đáng kể. ROI gấp 10 lần chi phí." data-en="AI answers customers even at 3 AM. Late-night orders increased significantly. 10x ROI on the subscription cost.">"3 giờ sáng vẫn có AI trả lời khách. Đơn hàng đêm khuya tăng đáng kể. ROI gấp 10 lần chi phí."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Linh Nguyen</strong>
+                        <span data-vi="Shop điện tử — Lazada + TikTok Shop" data-en="Electronics shop — Lazada + TikTok Shop">Shop điện tử — Lazada + TikTok Shop</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 data-vi="Bảng Giá Đơn Giản, Minh Bạch" data-en="Simple, Transparent Pricing">Bảng Giá Đơn Giản, Minh Bạch</h2>
+            <p class="section-subtitle" data-vi="Dùng thử 14 ngày miễn phí. Hủy bất cứ lúc nào." data-en="14-day free trial. Cancel anytime.">Dùng thử 14 ngày miễn phí. Hủy bất cứ lúc nào.</p>
+
+            <div class="pricing-toggle">
+                <span data-vi="VND" data-en="VND">VND</span>
+                <label class="toggle">
+                    <input type="checkbox" id="currencyToggle">
+                    <span class="slider"></span>
+                </label>
+                <span data-vi="USD" data-en="USD">USD</span>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">
+                        <span class="price-vnd">690K<small>đ/tháng</small></span>
+                        <span class="price-usd" style="display:none">$29<small>/month</small></span>
+                    </div>
+                    <ul>
+                        <li data-vi="1,000 tin nhắn/tháng" data-en="1,000 messages/month">1,000 tin nhắn/tháng</li>
+                        <li data-vi="2 kênh chat" data-en="2 chat channels">2 kênh chat</li>
+                        <li data-vi="100 sản phẩm" data-en="100 products">100 sản phẩm</li>
+                        <li data-vi="Hỗ trợ email" data-en="Email support">Hỗ trợ email</li>
+                    </ul>
+                    <a href="#cta" class="btn btn-outline" data-vi="Bắt đầu miễn phí" data-en="Start Free">Bắt đầu miễn phí</a>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge" data-vi="Phổ biến nhất" data-en="Most Popular">Phổ biến nhất</div>
+                    <h3>Growth</h3>
+                    <div class="price">
+                        <span class="price-vnd">1.89M<small>đ/tháng</small></span>
+                        <span class="price-usd" style="display:none">$79<small>/month</small></span>
+                    </div>
+                    <ul>
+                        <li data-vi="5,000 tin nhắn/tháng" data-en="5,000 messages/month">5,000 tin nhắn/tháng</li>
+                        <li data-vi="4 kênh chat" data-en="4 chat channels">4 kênh chat</li>
+                        <li data-vi="500 sản phẩm" data-en="500 products">500 sản phẩm</li>
+                        <li data-vi="Hỗ trợ chat ưu tiên" data-en="Priority chat support">Hỗ trợ chat ưu tiên</li>
+                        <li data-vi="Dashboard analytics" data-en="Dashboard analytics">Dashboard analytics</li>
+                    </ul>
+                    <a href="#cta" class="btn btn-primary" data-vi="Bắt đầu miễn phí" data-en="Start Free">Bắt đầu miễn phí</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Pro</h3>
+                    <div class="price">
+                        <span class="price-vnd">4.79M<small>đ/tháng</small></span>
+                        <span class="price-usd" style="display:none">$199<small>/month</small></span>
+                    </div>
+                    <ul>
+                        <li data-vi="Không giới hạn tin nhắn" data-en="Unlimited messages">Không giới hạn tin nhắn</li>
+                        <li data-vi="Tất cả kênh chat" data-en="All chat channels">Tất cả kênh chat</li>
+                        <li data-vi="Không giới hạn sản phẩm" data-en="Unlimited products">Không giới hạn sản phẩm</li>
+                        <li data-vi="Hỗ trợ VIP 24/7" data-en="24/7 VIP support">Hỗ trợ VIP 24/7</li>
+                        <li data-vi="API tùy chỉnh" data-en="Custom API">API tùy chỉnh</li>
+                        <li data-vi="White-label" data-en="White-label">White-label</li>
+                    </ul>
+                    <a href="#cta" class="btn btn-outline" data-vi="Bắt đầu miễn phí" data-en="Start Free">Bắt đầu miễn phí</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <h2 data-vi="Thử ngay — Nhắn tin cho ShopClaw AI" data-en="Try it now — Chat with ShopClaw AI">Thử ngay — Nhắn tin cho ShopClaw AI</h2>
+            <p class="section-subtitle" data-vi="Gửi tin nhắn demo bên dưới để xem AI trả lời như thế nào" data-en="Send a demo message below to see how the AI responds">Gửi tin nhắn demo bên dưới để xem AI trả lời như thế nào</p>
+
+            <div class="demo-chat" id="demoChat">
+                <div class="demo-messages" id="demoMessages">
+                    <div class="message bot">
+                        <span data-vi="Xin chào! Em là ShopClaw AI. Anh/chị có thể hỏi em về sản phẩm, đơn hàng, hoặc khuyến mãi ạ!" data-en="Hi there! I'm ShopClaw AI. You can ask me about products, orders, or promotions!">Xin chào! Em là ShopClaw AI. Anh/chị có thể hỏi em về sản phẩm, đơn hàng, hoặc khuyến mãi ạ!</span>
+                    </div>
+                </div>
+                <div class="demo-suggestions" id="demoSuggestions">
+                    <button class="suggestion-btn" data-vi="Có áo thun trắng không?" data-en="Do you have white t-shirts?">Có áo thun trắng không?</button>
+                    <button class="suggestion-btn" data-vi="Kiểm tra đơn ORD-20260228-001" data-en="Check order ORD-20260228-001">Kiểm tra đơn ORD-20260228-001</button>
+                    <button class="suggestion-btn" data-vi="Có mã giảm giá nào không?" data-en="Any discount codes?">Có mã giảm giá nào không?</button>
+                    <button class="suggestion-btn" data-vi="Chính sách đổi trả?" data-en="What's your return policy?">Chính sách đổi trả?</button>
+                </div>
+                <div class="demo-input">
+                    <input type="text" id="demoInput" data-vi-placeholder="Nhập tin nhắn..." data-en-placeholder="Type a message..." placeholder="Nhập tin nhắn...">
+                    <button id="demoSend" data-vi="Gửi" data-en="Send">Gửi</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <h2 data-vi="Bắt đầu kiếm tiền khi bạn ngủ" data-en="Start making money while you sleep">Bắt đầu kiếm tiền khi bạn ngủ</h2>
+            <p data-vi="Đăng ký ngay, setup 10 phút, AI bắt đầu chăm sóc khách hàng 24/7." data-en="Sign up now, 10-minute setup, AI starts serving customers 24/7.">Đăng ký ngay, setup 10 phút, AI bắt đầu chăm sóc khách hàng 24/7.</p>
+            <form class="cta-form" id="ctaForm">
+                <input type="email" placeholder="Email" required id="ctaEmail">
+                <input type="tel" data-vi-placeholder="Số điện thoại (tùy chọn)" data-en-placeholder="Phone (optional)" placeholder="Số điện thoại (tùy chọn)" id="ctaPhone">
+                <button type="submit" class="btn btn-primary btn-lg" data-vi="Dùng thử miễn phí 14 ngày" data-en="Start 14-Day Free Trial">Dùng thử miễn phí 14 ngày</button>
+            </form>
+            <p class="cta-note" data-vi="Không cần thẻ tín dụng. Hủy bất cứ lúc nào." data-en="No credit card required. Cancel anytime.">Không cần thẻ tín dụng. Hủy bất cứ lúc nào.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-icon">🦞</span>
+                    <span class="logo-text">ShopClaw AI</span>
+                    <p data-vi="AI chăm sóc khách hàng cho shop online. Powered by OpenClaw." data-en="AI customer service for online shops. Powered by OpenClaw.">AI chăm sóc khách hàng cho shop online. Powered by OpenClaw.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-vi="Sản phẩm" data-en="Product">Sản phẩm</h4>
+                    <a href="#features" data-vi="Tính năng" data-en="Features">Tính năng</a>
+                    <a href="#pricing" data-vi="Bảng giá" data-en="Pricing">Bảng giá</a>
+                    <a href="#demo" data-vi="Demo" data-en="Demo">Demo</a>
+                </div>
+                <div class="footer-links">
+                    <h4 data-vi="Hỗ trợ" data-en="Support">Hỗ trợ</h4>
+                    <a href="#" data-vi="Hướng dẫn sử dụng" data-en="Documentation">Hướng dẫn sử dụng</a>
+                    <a href="#" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
+                    <a href="#" data-vi="FAQ" data-en="FAQ">FAQ</a>
+                </div>
+                <div class="footer-links">
+                    <h4 data-vi="Pháp lý" data-en="Legal">Pháp lý</h4>
+                    <a href="#" data-vi="Điều khoản sử dụng" data-en="Terms of Service">Điều khoản sử dụng</a>
+                    <a href="#" data-vi="Chính sách bảo mật" data-en="Privacy Policy">Chính sách bảo mật</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ShopClaw AI. Built with <a href="https://openclaw.ai">OpenClaw</a> 🦞</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

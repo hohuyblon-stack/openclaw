@@ -1,0 +1,32 @@
+{
+  "_comment": "Discord Bot configuration",
+  "_docs": "https://discord.com/developers/docs",
+
+  "channel": "discord",
+  "enabled": false,
+
+  "credentials": {
+    "bot_token": "YOUR_DISCORD_BOT_TOKEN",
+    "application_id": "YOUR_APPLICATION_ID"
+  },
+
+  "settings": {
+    "auto_reply": true,
+    "activation": "mention",
+    "language": "auto",
+    "welcome_message": "Hey! I'm the shop's AI assistant. Mention me or DM me to get help with products, orders, and more!",
+    "dm_enabled": true,
+    "allowed_channels": [],
+    "prefix": "!"
+  },
+
+  "setup_guide": [
+    "1. Go to https://discord.com/developers/applications",
+    "2. Create a New Application",
+    "3. Go to Bot section and create a bot",
+    "4. Copy the bot token",
+    "5. Enable Message Content Intent in the Bot settings",
+    "6. Generate an invite URL with appropriate permissions",
+    "7. Invite the bot to your server"
+  ]
+}

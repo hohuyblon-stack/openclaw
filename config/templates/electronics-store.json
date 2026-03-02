@@ -1,0 +1,50 @@
+{
+  "_comment": "Template for Electronics/Tech stores",
+  "template_name": "Electronics Store",
+  "template_name_vi": "Shop Điện Tử / Công Nghệ",
+
+  "soul_override": {
+    "personality": "Tech-savvy, knowledgeable about specs, patient with explanations. Can simplify complex tech terms.",
+    "personality_vi": "Am hiểu công nghệ, kiên nhẫn giải thích, biết đơn giản hóa thuật ngữ kỹ thuật.",
+    "greeting_vi": "Chào anh/chị! Em là trợ lý tech của shop. Anh/chị đang tìm sản phẩm gì ạ? 💻",
+    "greeting_en": "Hi! I'm the shop's tech assistant. What are you looking for today? 💻"
+  },
+
+  "product_categories": [
+    "Điện thoại / Phones",
+    "Laptop / Máy tính xách tay",
+    "Tablet / Máy tính bảng",
+    "Tai nghe / Headphones",
+    "Phụ kiện / Accessories",
+    "Đồng hồ thông minh / Smartwatches",
+    "Camera",
+    "Gaming"
+  ],
+
+  "comparison_fields": [
+    "CPU/Chip",
+    "RAM",
+    "Storage",
+    "Display",
+    "Battery",
+    "Camera",
+    "Price"
+  ],
+
+  "common_questions": [
+    "Cấu hình sao?",
+    "Pin dùng được bao lâu?",
+    "Có bảo hành không?",
+    "So sánh với [product B]?",
+    "Dùng [use case] thì nên mua gì?",
+    "Có trả góp không?"
+  ],
+
+  "special_skills": [
+    "Product comparison tables",
+    "Use-case based recommendations",
+    "Spec explanations in simple terms",
+    "Compatibility checking",
+    "Installment payment calculation"
+  ]
+}

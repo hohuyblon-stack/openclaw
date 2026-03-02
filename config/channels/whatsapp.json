@@ -1,0 +1,33 @@
+{
+  "_comment": "WhatsApp Business API configuration (via Baileys)",
+  "_docs": "https://developers.facebook.com/docs/whatsapp",
+
+  "channel": "whatsapp",
+  "enabled": false,
+
+  "credentials": {
+    "phone_number_id": "YOUR_PHONE_NUMBER_ID",
+    "access_token": "YOUR_WHATSAPP_ACCESS_TOKEN",
+    "webhook_verify_token": "YOUR_VERIFY_TOKEN",
+    "business_account_id": "YOUR_BUSINESS_ACCOUNT_ID"
+  },
+
+  "settings": {
+    "auto_reply": true,
+    "welcome_message_vi": "Xin chào! Em là trợ lý AI của shop. Anh/chị cần hỗ trợ gì ạ? 😊",
+    "welcome_message_en": "Hi! I'm the shop's AI assistant. How can I help you? 😊",
+    "language": "auto",
+    "chunk_long_messages": true,
+    "max_chunk_size": 4000,
+    "read_receipts": true
+  },
+
+  "setup_guide": [
+    "1. Create a Meta Business account at https://business.facebook.com",
+    "2. Set up WhatsApp Business API in Meta Developer Portal",
+    "3. Register a phone number for your business",
+    "4. Get your Phone Number ID, Access Token, and Business Account ID",
+    "5. Configure webhook URL to your OpenClaw gateway",
+    "6. Paste credentials in this config file"
+  ]
+}

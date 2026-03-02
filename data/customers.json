@@ -1,0 +1,47 @@
+{
+  "_comment": "Sample customer data — In production, connect to your CRM/database",
+  "customers": [
+    {
+      "id": "CUST-001",
+      "name": "Nguyen Van A",
+      "phone": "+84901234567",
+      "email": "nguyenvana@email.com",
+      "language": "vi",
+      "loyalty": {
+        "points": 850,
+        "tier": "Silver",
+        "total_spent_vnd": 8500000,
+        "orders_count": 12,
+        "member_since": "2025-06-15"
+      }
+    },
+    {
+      "id": "CUST-002",
+      "name": "Jane Smith",
+      "phone": "+1234567890",
+      "email": "jane@email.com",
+      "language": "en",
+      "loyalty": {
+        "points": 250,
+        "tier": "Bronze",
+        "total_spent_usd": 250,
+        "orders_count": 3,
+        "member_since": "2025-12-01"
+      }
+    },
+    {
+      "id": "CUST-003",
+      "name": "Tran Thi B",
+      "phone": "+84987654321",
+      "email": "tranthib@email.com",
+      "language": "vi",
+      "loyalty": {
+        "points": 2100,
+        "tier": "Gold",
+        "total_spent_vnd": 21000000,
+        "orders_count": 28,
+        "member_since": "2025-03-20"
+      }
+    }
+  ]
+}

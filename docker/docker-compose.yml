@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  shopclaw:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: shopclaw-ai
+    restart: unless-stopped
+    ports:
+      - "18789:18789"
+    volumes:
+      # Mount config for easy editing without rebuild
+      - ../config/openclaw.json:/root/.openclaw/openclaw.json:ro
+      - ../config/channels:/root/.openclaw/channels:ro
+      - ../data:/root/.openclaw/workspace/data
+      - ../workspace:/root/.openclaw/workspace
+      - ../skills:/root/.openclaw/workspace/skills:ro
+    environment:
+      - NODE_ENV=production
+      # Set your API key here or in a .env file
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - shopclaw-net
+
+networks:
+  shopclaw-net:
+    driver: bridge
