@@ -6,6 +6,7 @@
     "default": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-6",
+      "api_key": "$ANTHROPIC_API_KEY",
       "_comment": "Use claude-opus-4-6 for best quality, claude-sonnet-4-6 for cost-effective"
     },
     "fallback": {
