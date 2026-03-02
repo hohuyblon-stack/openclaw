@@ -1,18 +1,7 @@
 {
   "version": 2,
   "name": "shopclaw-ai",
-  "builds": [
-    {
-      "src": "landing-page/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/landing-page/$1"
-    }
-  ],
+  "outputDirectory": "landing-page",
   "headers": [
     {
       "source": "/(.*)",
