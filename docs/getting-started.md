@@ -17,7 +17,7 @@ ShopClaw AI is a ready-to-use AI customer service solution for e-commerce stores
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/hohuyblon-stack/openclaw.git shopclaw
+git clone https://github.com/builtbyhuy/openclaw.git shopclaw
 cd shopclaw
 ```
 

@@ -26,7 +26,7 @@ ShopClaw AI turns your messaging channels into a 24/7 AI-powered customer servic
 
 ```bash
 # Clone ShopClaw AI
-git clone https://github.com/hohuyblon-stack/openclaw.git shopclaw
+git clone https://github.com/builtbyhuy/openclaw.git shopclaw
 cd shopclaw
 
 # Run the setup wizard
